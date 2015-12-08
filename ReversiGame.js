@@ -15,6 +15,7 @@
         var bLeft = false;
         var bDRight = false;
         var bGameOver = false;
+        var bIsEnd = false;
         var iCount = 0;
         var strColor;
         var strOppColor;
@@ -137,135 +138,139 @@
             bURight = false;
             bDLeft = false;
             bULeft = false;
+            bIsEnd = false;
             var iCount = 0;
             var iTempCount = 0;
             var i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
 
-            //Down
-
-            while (i <= 7 && astrColor[i][iCol] == strOppColor)
+            if (bIsEnd == false)
             {
-                i++;
-                iTempCount++;
-            }
-            if (i <= 7 && astrColor[i][iCol] == strColor && iTempCount > 0)
+                //Down
+
+                while (i <= 7 && astrColor[i][iCol] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bDown = true;
+                    i++;
+                    iTempCount++;
                 }
+                if (i <= 7 && astrColor[i][iCol] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bDown = true;
+                    }
 
-            iTempCount = 0;
+                iTempCount = 0;
 
-            //Up
+                //Up
 
-            while (j >= 0 && astrColor[j][iCol] == strOppColor)
-            {
-                j--;
-                iTempCount++;
-            }
-            if (j >= 0 && astrColor[j][iCol] == strColor && iTempCount > 0)
+                while (j >= 0 && astrColor[j][iCol] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bUp = true;
+                    j--;
+                    iTempCount++;
                 }
-            iTempCount = 0;
+                if (j >= 0 && astrColor[j][iCol] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bUp = true;
+                    }
+                iTempCount = 0;
 
-            //Right
+                //Right
 
-            while (k <= 7 && astrColor[iRow][k] == strOppColor) 
-            {
-                k++;
-                iTempCount++;
-            }
-            if (k <= 7 && astrColor[iRow][k] == strColor && iTempCount > 0)
+                while (k <= 7 && astrColor[iRow][k] == strOppColor) 
                 {
-                    iCount += iTempCount;
-                    bRight = true;
+                    k++;
+                    iTempCount++;
                 }
-            iTempCount = 0;
+                if (k <= 7 && astrColor[iRow][k] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bRight = true;
+                    }
+                iTempCount = 0;
 
-            //Left
+                //Left
 
-            while (m >= 0 && astrColor[iRow][m] == strOppColor)
-            {
-                m--;
-                iTempCount++;
-            }
-            if (m >= 0 && astrColor[iRow][m] == strColor && iTempCount > 0)
+                while (m >= 0 && astrColor[iRow][m] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bLeft = true;
+                    m--;
+                    iTempCount++;
                 }
-            i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
+                if (m >= 0 && astrColor[iRow][m] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bLeft = true;
+                    }
+                i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
 
-            iTempCount = 0;
+                iTempCount = 0;
 
-            //Down Right
+                //Down Right
 
-            while (i <= 7 && k <= 7 && astrColor[i][k] == strOppColor)
-            {
-                i++;
-                k++;
-                iTempCount++;
-            }
-            if (i <= 7 && k <= 7 && astrColor[i][k] == strColor && iTempCount > 0)
+                while (i <= 7 && k <= 7 && astrColor[i][k] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bDRight = true;
+                    i++;
+                    k++;
+                    iTempCount++;
                 }
-            i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
+                if (i <= 7 && k <= 7 && astrColor[i][k] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bDRight = true;
+                    }
+                i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
 
-            iTempCount = 0;
+                iTempCount = 0;
 
-            //Up Right
+                //Up Right
 
-            while (j >= 0 && k <= 7 && astrColor[j][k] == strOppColor)
-            {
-                j--;
-                k++;
-                iTempCount++;
-            }
-            if (j >= 0 && k <= 7 && astrColor[j][k] == strColor && iTempCount > 0)
+                while (j >= 0 && k <= 7 && astrColor[j][k] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bURight = true;
+                    j--;
+                    k++;
+                    iTempCount++;
                 }
-            i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
+                if (j >= 0 && k <= 7 && astrColor[j][k] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bURight = true;
+                    }
+                i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
 
-            iTempCount = 0;
+                iTempCount = 0;
 
-            //Down Left
+                //Down Left
 
-            while (i <= 7 && m <= 7 && astrColor[i][m] == strOppColor)
-            {
-                i++;
-                m--;
-                iTempCount++;
-            }
-            if (i <= 7 && m <= 7 && astrColor[i][m] == strColor && iTempCount > 0)
+                while (i <= 7 && m <= 7 && astrColor[i][m] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bDLeft = true;
+                    i++;
+                    m--;
+                    iTempCount++;
                 }
-            i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
+                if (i <= 7 && m <= 7 && astrColor[i][m] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bDLeft = true;
+                    }
+                i = iRow + 1; j = iRow - 1; k = iCol + 1; m = iCol - 1;
 
-            iTempCount = 0;
+                iTempCount = 0;
 
-            //Up Left
+                //Up Left
 
-            while (j >= 0 && m <= 7 && astrColor[j][m] == strOppColor)
-            {
-                j--;
-                m--;
-                iTempCount++;
-            }
-            if (j >= 0 && m <= 7 && astrColor[j][m] == strColor && iTempCount > 0)
+                while (j >= 0 && m <= 7 && astrColor[j][m] == strOppColor)
                 {
-                    iCount += iTempCount;
-                    bULeft = true;
+                    j--;
+                    m--;
+                    iTempCount++;
                 }
+                if (j >= 0 && m <= 7 && astrColor[j][m] == strColor && iTempCount > 0)
+                    {
+                        iCount += iTempCount;
+                        bULeft = true;
+                    }
+            }
 
-
+            
             document.getElementById('taOut').value = iCount;
             return iCount;
         }
@@ -351,18 +356,33 @@
         {
             var iBCount = 0;
             var iWCount = 0;
+            var iECount = 0;
+            var iHCount = 0;
             var i;
             var j;
             for (i = 0; i <= 7; i++)
                 for (j = 0; j <= 7; j++)
                 {
                     if (astrColor[i][j] == 'b')
-                        iBCount++
-                    if (astrColor[i][j] == 'w')
-                        iWCount++
+                        iBCount++;
+                    else if (astrColor[i][j] == 'w')
+                        iWCount++;
+                    else
+                        iECount++;
                 }
             document.getElementById('txtb').value = iBCount;
             document.getElementById('txtw').value = iWCount;
+
+            if (iECount == 0)
+                bIsEnd = true;
+
+            if (iBCount > iWCount)
+                iHCount = 'Black';
+            else
+                iHCount = 'White';
+
+            if (bIsEnd == true)
+                document.getElementById('taOut').value = 'The winner is ' + iHCount + '.';
         }
 
         function vCompPlay()
@@ -373,28 +393,35 @@
             var iMaxTurned = 0;
             var iMax = 0;
             var jMax = 0;
-                
-            for (i = 0; i <= 7; i++)
-                for (j = 0; j <= 7; j++)
-                {
-                    iNumReverse(i,j,strColor,strOppColor);
-                    iTurned = document.getElementById('taOut').value;
-                    if (astrColor[i][j] == 'e')
+            
+            if (!bIsEnd)
+            {
+                for (i = 0; i <= 7; i++)
+                    for (j = 0; j <= 7; j++)
                     {
-                            if (iTurned > iMaxTurned)
-                            {
-                                iMaxTurned = iTurned;
-                                iMax = i;
-                                jMax = j;
-                            }
+                        iNumReverse(i,j,strColor,strOppColor);
+                        iTurned = document.getElementById('taOut').value;
+                        if (astrColor[i][j] == 'e')
+                        {
+                                if (iTurned > iMaxTurned)
+                                {
+                                    iMaxTurned = iTurned;
+                                    iMax = i;
+                                    jMax = j;
+                                }
+                        }
                     }
+                if (strColor == 'b')
+                {
+                    strColor = 'w';
+                    strOppColor = 'b';
                 }
-            if (strColor == 'b') {
-                strColor = 'w';
-                strOppColor = 'b';
-            } else {
-                strColor = 'b';
-                strOppColor = 'w';
+                else
+                {
+                    strColor = 'b';
+                    strOppColor = 'w';
+                }
+                vClick(iMax, jMax);
+                vGameOver();
             }
-            vClick(iMax, jMax)
         }
