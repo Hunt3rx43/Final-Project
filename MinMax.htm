@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Max/Min </title>
+    <script type="text/javascript" src="MinMax.js">
+        
+    </script>
+</head>
+<body>
+    <form>
+        <table style="background-color:gainsboro; border-style:groove; border-color:black">
+            <tr>
+                <td colspan="2" style="text-align:center"> Max/Min </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Number 1 </td>
+                <td> <input type="text" id="txtNum1" /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Number 2 </td>
+                <td> <input type="text" id="txtNum2" /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Number 3 </td>
+                <td> <input type="text" id="txtNum3" /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> <input type="button" id="btnMax" value="Max" onclick="vMax(document.getElementById('txtNum1').value, document.getElementById('txtNum2').value, document.getElementById('txtNum3').value)" /> </td>
+                <td style="text-align:center"> <input type="button" id="btnMin" value="Min" onclick="vMin(document.getElementById('txtNum1').value, document.getElementById('txtNum2').value, document.getElementById('txtNum3').value)" /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="text" id="txtAns" size="30" /> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

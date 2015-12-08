@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Grid of Images </title>
+    <script type="text/javascript">
+        var astrColor = [['r','r','r','r','r','r'],['g','g','g','g','g','g'],['b','b','b','b','b','b'],['r','r','r','r','r','r'],['g','g','g','g','g','g'],['b','b','b','b','b','b']];
+        function vBuild()
+        {
+            var strHTML, i, j;
+
+            strHTML = "<table style='margin-left:auto; margin-right:auto'>";
+
+            for (i = 0; i < 6; i++)
+            {
+                strHTML += "<tr>";
+
+                for (j = 0; j < 6; j++)
+                {
+                    strHTML += "<td>";
+                    if (astrColor[i][j] == 'r')
+                        strHTML += "<img src='Images/RC.png'"
+                    else if (astrColor[i][j] == 'g')
+                        strHTML += "<img src='Images/GC.png'"
+                    else if (astrColor[i][j] == 'b')
+                        strHTML += "<img src='Images/BC.png'"
+                    strHTML += " id = 'img" + i + "," + j + "' onclick='vClick(" + i + "," + j + ")' onmouseover='vOver(" + i + "," + j + ")' onmouseout='vOut(" + i + "," + j + ")' />"
+                    strHTML += "<td>";
+                }
+                strHTML += "</tr>"
+            }
+            strHTML += "</table>"
+            document.getElementById('frmImageGrid').innerHTML = strHTML;
+        }
+
+        function vClick(iRow, iCol)
+        {
+            var strID = "img" + iRow + "," + iCol;
+
+            if (astrColor[iRow][iCol] == 'r')
+            {
+                document.getElementById(strID).src = 'Images/GC.png'
+                astrColor[iRow][iCol] = 'g';
+            }
+            else if (astrColor[iRow][iCol] == 'g')
+            {
+                document.getElementById(strID).src = 'Images/BC.png'
+                astrColor[iRow][iCol] = 'b';
+            }
+            else if (astrColor[iRow][iCol] == 'b')
+            {
+                document.getElementById(strID).src = 'Images/RC.png'
+                astrColor[iRow][iCol] = 'r';
+            }
+        }
+
+        function vOver(iRow, iCol)
+        {
+            var strID = "img" + iRow + "," + iCol;
+
+            if (astrColor[iRow][iCol] == 'r')
+            {
+                document.getElementById(strID).src = 'Images/RT.png'
+            
+            }
+            else if (astrColor[iRow][iCol] == 'g')
+            {
+                document.getElementById(strID).src = 'Images/GT.png'
+            
+            }
+            else if (astrColor[iRow][iCol] == 'b')
+            {
+                document.getElementById(strID).src = 'Images/BT.png'
+            
+            }
+        }
+
+        function vOut(iRow, iCol)
+        {
+            var strID = "img" + iRow + "," + iCol;
+
+            if (astrColor[iRow][iCol] == 'r')
+            {
+                document.getElementById(strID).src = 'Images/RC.png'
+
+            }
+            else if (astrColor[iRow][iCol] == 'g')
+            {
+                document.getElementById(strID).src = 'Images/GC.png'
+
+            }
+            else if (astrColor[iRow][iCol] == 'b')
+            {
+                document.getElementById(strID).src = 'Images/BC.png'
+
+            }
+        }
+
+    </script>
+</head>
+<body onload="vBuild()">
+    <form id="frmImageGrid">
+
+    </form>
+</body>
+</html>

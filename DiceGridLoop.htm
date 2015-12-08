@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Grid of Dice </title>
+    <script type="text/javascript">
+        function vInit() 
+        {
+            var strHTML = '';
+
+            var i, j;
+
+            strHTML = '<table>'
+
+            for (i = 1; i <= 5; i++)
+            {
+                strHTML += '<tr>'
+
+                for (j = 1; j <= 5; j++)
+                    strHTML += "<td> <img src='Images/Dice1.png' id='Square" + i + "," + j + "' onclick='vClickSquare(" + i + "," + j + ")'/> </td>"
+
+                strHTML += '</tr>'
+            }
+
+            strHTML += '</table>'
+
+            document.getElementById('frmGrid').innerHTML = strHTML;
+        }
+
+        function vClickSquare(iRow, iCol)
+        {
+            var strSquareID = "Square" + iRow + "," + iCol;
+            var iRandom = Math.floor(Math.random() * 6) + 1;
+            
+            if (iRandom == 1)
+                document.getElementById(strSquareID).src = "Images/Dice1.png";
+            else if (iRandom == 2)
+                document.getElementById(strSquareID).src = "Images/Dice2.png";
+            else if (iRandom == 3)
+                document.getElementById(strSquareID).src = "Images/Dice3.png";
+            else if (iRandom == 4)
+                document.getElementById(strSquareID).src = "Images/Dice4.png";
+            else if (iRandom == 5)
+                document.getElementById(strSquareID).src = "Images/Dice5.png";
+            else if (iRandom == 6)
+                document.getElementById(strSquareID).src = "Images/Dice6.png";
+        }
+    </script>
+</head>
+<body onload="vInit()">
+    <form id="frmGrid">
+
+
+
+    </form>
+</body>
+</html>

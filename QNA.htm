@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Homework 11 </title>
+    <script type="text/javascript" src="QNA.js">
+
+    </script>
+</head>
+<body style="background-color:black">
+    <form id="frmQuiz">
+        <table style="margin-left:auto; margin-right:auto; background-color:crimson">
+            <tr>
+                <td colspan="3"> Quiz about Anthony Brandt </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> 1. What is my middle Name? </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbJames" name="rbName" value="James" /> a. James </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbJoseph" name="rbName" value="Joseph" /> b. Joseph </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbJackson" name="rbName" value="Jackson" /> c. Jackson </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> 2. Where was I born? </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbDenver" name="rbBirth" value="Denver" /> a. Denver, CO </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbHolyoke" name="rbBirth" value="Holyoke" /> b. Holyoke, CO </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbPueblo" name="rbBirth" value="Pueblo" /> c. Pueblo, CO </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> 3. What sport did I NOT participate in while in High School? </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbGolf" name="rbSport" value="Golf" /> a. Golf </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbTrack" name="rbSport" value="Track" /> b. Track </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbBasketball" name="rbSport" value="Basketball" /> c. Basketball </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> As a kid I had which Animals? </td>
+            </tr>
+            <tr>
+                <td colspan="2"> Check all the animals that I had while I was a kid: </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbCat" name="cbAnimal" value="Cat" /> Cat </td>
+                <td> <input type="checkbox" id="cbDog" name="cbAnimal" value="Dog" /> Dog </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbCow" name="cbAnimal" value="Cow" /> Cow </td>
+                <td> <input type="checkbox" id="cbHamster" name="cbAnimal" value="Hamster" /> Hamster </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbFish" name="cbAnimal" value="Fish" /> Fish </td>
+                <td> <input type="checkbox" id="cbHorse" name="cbAnimal" value="Horse" /> Horse </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbParrot" name="cbAnimal" value="Parrot" /> Parrot </td>
+                <td> <input type="checkbox" id="cbSheep" name="cbAnimal" value="Sheep" /> Sheep </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td> 5. How old am I? <select id="AgeMenu">
+                    <option value="18"> 18 </option>
+                    <option value="19"> 19 </option>
+                    <option value="20"> 20 </option>
+                    </select> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btnGrade" value="Grade the Quiz!" onclick="vGrade()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td> Correct Answers: </td>
+            </tr>
+            <tr>
+                <td> Question 1: <input type="text" id="txt1" style="width:.5in" /> </td>
+            </tr>
+            <tr>
+                <td> Question 2: <input type="text" id="txt2" style="width:.5in" /> </td>
+            </tr>
+            <tr>
+                <td> Question 3: <input type="text" id="txt3" style="width:.5in" /> </td>
+            </tr>
+            <tr>
+                <td> Question 4: <input type="text" id="txt4" /> </td>
+            </tr>
+            <tr>
+                <td> Question 5: <input type="text" id="txt5" style="width:.5in" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> You scored <input type="text" id="txtScore" style="width:.5in" /> out of 7 </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td> Feedback: </td>
+            </tr>
+            <tr>
+                <td colspan="2"> How would you describe me? </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbCheer" name="cbFeed" value="Cheerful" /> Cheerful </td>
+                <td> <input type="checkbox" id="cbMean" name="cbFeed" value="Mean" /> Mean </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbHelp" name="cbFeed" value="Helpful" /> Helpful </td>
+                <td> <input type="checkbox" id="cbImpatient" name="cbFeed" value="Impatient" /> Impatient </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbLoud" name="cbFeed" value="Loud" /> Loud </td>
+                <td> <input type="checkbox" id="cbAwesome" name="cbFeed" value="Awesome" /> Awesome </td>
+            </tr>
+            <tr>
+                <td> <input type="checkbox" id="cbAnnoy" name="cbFeed" value="Annoying" /> Annoying </td>
+                <td> <input type="checkbox" id="cbIncon" name="cbFeed" value="Inconsiderate" /> Inconsiderate </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btnSubmit" value="Submit" onclick="vSubmit()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <input type="text" id="txtSub" style="width:4in" /> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Homework 7 </title>
+    <script type="text/javascript" src="Calculations.js">
+        
+    </script>
+</head>
+<body>
+
+    <form id="frmCalc">
+        <table style="background-color:gainsboro; border:ridge; border-color:black">
+            <tr>
+                <td colspan="2" style="text-align:center"> Rectangle Calcualtions </td>
+            </tr>
+            <tr>
+                <td> Length </td>
+                <td> <input type="text" id="txtLeng" width="30" /> </td>
+            </tr>
+            <tr>
+                <td> Width </td>
+                <td> <input type="text" id="txtWidt" width="30" /> </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td> <input type="button" id="btnCalc" value="Calculate" onclick="vCalculate(document.getElementById('txtLeng').value, document.getElementById('txtWidt').value)" /> </td>
+            </tr>
+            <tr>
+                <td> Perimeter </td>
+                <td> <input type="text" id="txtPeri" width="30" /> </td>
+            </tr>
+            <tr>
+                <td> Area </td>
+                <td> <input type="text" id="txtArea" width="30" /> </td>
+            </tr>
+        </table>
+    </form>
+    <a href="Default.htm"> Back to Main Page </a>
+</body>
+</html>

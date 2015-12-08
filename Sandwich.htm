@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Sandwich Order Form </title>
+    <script type="text/javascript">
+        //global varible for meat
+        var iMeatCount = 0;
+
+        var iNumber = 0;
+
+        var strMeat = '';
+
+        //function to process/summarize the order
+        function vProcess()
+        {
+            //create vars to store the size, bread, meat, and cheese
+            var strSize, strBread = 'no', strCheese = 'no';
+
+            //determine the size from the combo menu
+            strSize = document.getElementById('SizeMenu').value;
+
+            //determin the bread choice
+            if (document.getElementById('rbWhite').checked)
+                strBread = document.getElementById('rbWhite').value;
+            else if (document.getElementById('rbWheat').checked)
+                strBread = document.getElementById('rbWheat').value;
+            else if (document.getElementById('rbFlat').checked)
+                strBread = document.getElementById('rbFlat').value;
+
+            //determine the cheese choice
+            if (document.getElementById('rbChedder').checked)
+                strCheese = document.getElementById('rbChedder').value;
+            else if (document.getElementById('rbAmerican').checked)
+                strCheese = document.getElementById('rbAmerican').value;
+            else if (document.getElementById('rbSwiss').checked)
+                strCheese = document.getElementById('rbSwiss').value;
+
+            /*//determine the meat choice
+            if (document.getElementById('cbHam').checked)
+                strMeat = document.getElementById('cbHam').value + '\r';
+            if (document.getElementById('cbTurkey').checked)
+                strMeat += document.getElementById('cbTurkey').value + '\r';
+            if (document.getElementById('cbRoast').checked)
+                strMeat += document.getElementById('cbRoast').value + '\r';
+            if (document.getElementById('cbBacon').checked)
+                strMeat += document.getElementById('cbBacon').value + '\r';
+            if (document.getElementById('cbChicken').checked)
+                strMeat += document.getElementById('cbChicken').value + '\r';*/
+
+            iMeatCount = 0;
+            iNumber = 0;
+            strMeat = '';
+            vTotalMeatCount();
+            vMeat('cbHam');
+            vMeat('cbTurkey');
+            vMeat('cbRoast');
+            vMeat('cbBacon');
+            vMeat('cbChicken');
+
+
+
+            //print the order summary in the text area
+            document.getElementById('taOut').value = 'You ordered a ' + strSize + '-inch sandwich with ' + strCheese + ' cheese on ' + strBread + ' bread with the following meats: \r' + strMeat;
+        }
+
+
+        //function count how mant meat options are selected
+        function vTotalMeatCount()
+        {
+            if (document.getElementById('cbHam').checked)
+                iMeatCount += 1
+            if (document.getElementById('cbTurkey').checked)
+                iMeatCount += 1
+            if (document.getElementById('cbRoast').checked)
+                iMeatCount += 1
+            if (document.getElementById('cbBacon').checked)
+                iMeatCount += 1
+            if (document.getElementById('cbChicken').checked)
+                iMeatCount += 1
+        }
+
+        function vMeat(strMeatId)
+        {
+            if (document.getElementById(strMeatId).checked)
+            {
+                iNumber += 1;
+                if(iNumber < (iMeatCount - 1))
+                    strMeat += document.getElementById(strMeatId).value + ', ';
+                else if(iNumber == (iMeatCount - 1) && (iMeatCount != 2))
+                    strMeat += document.getElementById(strMeatId).value + ', and ';
+                else if((iMeatCount == 2) && (iNumber == (iMeatCount-1)))
+                    strMeat += document.getElementById(strMeatId).value + ' and ';
+                else 
+                    strMeat += document.getElementById(strMeatId).value;
+            }
+        }
+        function vJumpToPage()
+        {
+            document.location.href = document.getElementById('LinksMenu').value
+        }
+    </script>
+</head>
+<body style="background-color:gainsboro">
+    <form id="frmSand">
+        <table style="margin-left:auto; margin-right:auto; background-color:crimson">
+            <tr>
+                <td colspan="3" style="text-align:center; font-size:xx-large"> Sandwich Order Form </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; width:1.5in"> Bread </td>
+                <td style="text-align:center; width:1.5in"> Cheese </td>
+                <td style="text-align:center; width:1.5in"> Meat </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> (Choose one) </td>
+                <td style="text-align:center"> (Choose one) </td>
+                <td style="text-align:center"> (Select as many as you want) </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbWhite" name="rbBread" value="White" /> White </td>
+                <td> <input type="radio" id="rbChedder" name="rbCheese" value="Chedder" /> Chedder </td>
+                <td> <input type="checkbox" id="cbHam" name="cbMeat" value="Ham" /> Ham </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbWheat" name="rbBread" value="Wheat" /> Wheat </td>
+                <td> <input type="radio" id="rbAmerican" name="rbCheese" value="American" /> American </td>
+                <td> <input type="checkbox" id="cbTurkey" name="cbMeat" value="Turkey" /> Turkey </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="rbFlat" name="rbBread" value="Flat" /> Flatbread </td>
+                <td> <input type="radio" id="rbSwiss" name="rbCheese" value="Swiss" /> Swiss </td>
+                <td> <input type="checkbox" id="cbRoast" name="cbMeat" value="Roast Beef" /> Roast Beef </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td> <input type="checkbox" id="cbBacon" name="cbMeat" value="Bacon" /> Bacon </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td>  </td>
+                <td> <input type="checkbox" id="cbChicken" name="cbMeat" value="More Bacon" /> More Bacon </td>
+            </tr>
+            <tr>
+                <td> Select Size </td>
+                <td> <select id="SizeMenu">
+                        <option value="6"> 6-inch </option>
+                        <option value="8"> 8-inch </option>
+                        <option value="12"> 12-inch </option>
+                     </select> </td>
+                <td> <input type="button" id="btnOrder" value="Click to Order" onclick="vProcess()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <textarea cols="75" rows="7" id="taOut"> </textarea> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <select id="LinksMenu" onchange="vJumpToPage()">
+                    <option> Links to Nutrition </option>
+                    <option value="http://nutritiondata.self.com/facts/sausages-and-luncheon-meats/1344/2"> Ham </option>
+                    <option value="http://nutritiondata.self.com/facts/sausages-and-luncheon-meats/1390/2"> Turkey </option>
+                                 </select> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

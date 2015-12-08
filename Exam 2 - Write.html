@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Exam 2</title>
+    <script type="text/javascript" src="Exam2.js">
+        
+    </script>
+</head>
+<body>
+    <form id="frmE2">
+        <table style="margin-left:auto; margin-right:auto; border:2px solid red; background-color:pink">
+            <tr>
+                <td colspan="2" style="text-align:center"> List the first <input type="text" id="txtNumber" size="5"/> <select id="TypeMenu"> 
+                                                                                        <option value="e"> Even </option>
+                                                                                        <option value="o"> Odd </option>
+                                                                                      </select> numbers </td>
+            </tr>
+            
+            <tr>
+                <td style="text-align:center"> If the box is checked, also find the sum.  </td>
+                <td style="text-align:center"> <input type="checkbox" id="cbSum"  /> Find Sum </td>
+            </tr>
+            <tr>
+                <td  colspan="2" style="text-align:center"> <input type="button" id="btnGo" value="Go" onclick="vGo()" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align:center"> <textarea id="taOut" cols="35" rows="10"></textarea></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

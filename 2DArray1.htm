@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> 2-D Array </title>
+    <script type="text/javascript" src="2DArray.js">
+
+    </script>
+</head>
+<body style="background-color:crimson">
+    <table style="margin-left:auto; margin-right:auto; background-color:#14a0dc">
+        <tr>
+            <td colspan="4"> 2-D Arays </td>
+        </tr>
+        <tr>
+            <td colspan="2"> Number of Rows: </td>
+            <td colspan="2"> <input type="text" id="txtRows" /> </td>
+        </tr>
+        <tr>
+            <td colspan="2"> Number of Cols: </td>
+            <td colspan="2"> <input type="text" id="txtCols" /> </td>
+        </tr>
+        <tr>
+            <td align="center"> <input type="button" id="btnCreate" value="Create" onclick="vCreate()" /> </td>
+            <td align="center"> <input type="button" id="btnMax" value="Max" onclick="document.getElementById('taOut').value += 'The Max value is ' + fMaximum() + '.\r'" /> </td>
+            <td align="center"> <input type="button" id="btnMin" value="Min" onclick="document.getElementById('taOut').value += 'The Min value is ' + fMinimum() + '.\r'" /> </td>
+            <td align="center"> <input type="button" id="btnSum" value="Sum" onclick="document.getElementById('taOut').value += 'The Sum of the values is ' + fSum() + '.\r'" /> </td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2"> <input type="button" id="btnColTot" value="Column Totals" onclick="vAdd()" /> </td>
+            <td align="center">  </td>
+            <td align="center">  </td>
+        </tr>
+        <tr>
+            <td colspan="4"> <textarea id="taOut" readonly="readonly" rows="15" cols="40"></textarea></td>
+        </tr>
+    </table>
+</body>
+</html>

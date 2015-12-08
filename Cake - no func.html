@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Cake</title>
+    <script type="text/javascript">
+
+        function vProcess() {
+            var strOut = "";
+            var fFlour = parseFloat(document.getElementById('txtFlour').value);
+            var fSugar = parseFloat(document.getElementById('txtSugar').value);
+            var fSalt = parseFloat(document.getElementById('txtSalt').value);
+            var fEggs = parseFloat(document.getElementById('txtEggs').value);
+            var fOil = parseFloat(document.getElementById('txtOil').value);
+            var fBakSoda = parseFloat(document.getElementById('txtBakingSoda').value);
+
+            strOut = strAmount(fFlour, 2, 4, ' flour');
+            strOut += strAmount(fSugar, 1, 1.75, ' sugar');
+            strOut += strAmount(fSalt, .5, 1.5, ' salt');
+            strOut += strAmount(fEggs, 1, 2, ' eggs');
+            strOut += strAmount(fOil, .25, .5, ' oil');
+            strOut += strAmount(fBakSoda, .25, .75, ' baking soda');
+
+            document.getElementById('taOut').value = strOut;
+
+
+        }
+
+        function strAmount(fAmount, fMin, fMax, strIngred)
+        {
+            var strMessage
+            if (fAmount < fMin)
+                strMessage = 'Not enough ' + strIngred + '.\r';
+            else if (fAmount > fMax)
+                strMessage = 'Too Much ' + strIngred + '.\r';
+            else
+                strAmount = 'Perfect amount of ' + strIngred + '.\r';
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmCake">
+        <table style="margin-left:auto; margin-right:auto; background-color:yellow; border: 2px solid black">
+            <tr>    
+                <td colspan="3" style="text-align:center; font-size:x-large"> Cake Ingredients </td>
+            </tr>
+            <tr>
+                <td> Flour </td>
+                <td> <input type="text" id="txtFlour" size="10" /></td>
+                <td style="text-align:left">cups </td>
+            </tr>
+            <tr>
+                <td> Sugar </td>
+                <td> <input type="text" id="txtSugar" size="10" /></td>
+                <td style="text-align:left"> cups </td>
+            </tr>
+            <tr>
+                <td> Salt </td>
+                <td> <input type="text" id="txtSalt" size="10" /></td>
+                <td style="text-align:left"> teaspoons </td>
+            </tr>
+            <tr>
+                <td> Eggs </td>
+                <td> <input type="text" id="txtEggs" size="10" /></td>
+                <td style="text-align:left"> eggs </td>
+            </tr>
+            <tr>
+                <td> Oil </td>
+                <td> <input type="text" id="txtOil" size="10" /></td>
+                <td style="text-align:left"> cups </td>
+            </tr>
+            <tr>
+                <td> Baking Soda </td>
+                <td> <input type="text" id="txtBakingSoda" size="10" /></td>
+                <td style="text-align:left"> teaspoons </td>
+            </tr>
+            <tr>
+                <td colspan ="3" style="text-align:center"> <input type="button" id="btnGo" value="Go" onclick="vProcess()"/></td>
+            </tr>
+             <tr>
+                <td colspan ="3"style="text-align:center"> <textarea id="taOut" cols="30" rows="8"></textarea></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

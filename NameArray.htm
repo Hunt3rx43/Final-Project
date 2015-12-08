@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Name Arrays </title>
+    <script type="text/javascript" src="NameArray.js">
+        
+    </script>
+</head>
+<body style="background-color:crimson">
+        <form id="frmArrays">
+        <table style="margin-left:auto; margin-right:auto; background-color:#14a0dc">
+            <tr>
+                <td colspan="3" style="text-align:center; font-size:xx-large"> Name Arrays </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Please enter a name: </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtName1" /> </td>
+                <td> <input type="button" value="Enter" id="btnEnter" style="width:1in; background-color:#dc5014" onclick="vEnter()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td style="padding-left:.5in"> <input type="button" value="Clear" id="btnClear" style="width:1in; text-align:center; margin:auto; background-color:#dc5014" onclick="vClear()" /> </td>
+                <td>  </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Search for names <br /> that start with the letter: </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtLetter" /> </td>
+                <td> <input type="button" value="Search" id="btnSearch" style="width:1in; background-color:#dc5014" onclick="vSearchFL()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Search for names <br /> that are a certain length: </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtLength" /> </td>
+                <td> <input type="button" value="Search" id="btnLength" style="width:1in; background-color:#dc5014" onclick="vSearchLeng()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Enter letter to find <br /> total number of: </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtFLetter" /> </td>
+                <td> <input type="button" value="Find" id="btnFLetter" style="width:1in; background-color:#dc5014" onclick="vSearchLF()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <textarea id="taOut" rows="10" cols="75"> </textarea> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

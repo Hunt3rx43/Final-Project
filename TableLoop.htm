@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Grid of Square </title>
+    <script type="text/javascript">
+        function vInit()
+        {
+            var strHTML = '';
+
+            var i, j;
+
+            strHTML = '<table>'
+
+            for (i = 1; i <= 5; i++)
+            {
+                strHTML += '<tr>'
+
+                for (j = 1; j <= 5; j++)
+                    strHTML += "<td> <img src='Images/RedSquare.png' id='Square" + i + "," + j + "' onclick='vClickSquare(" + i + "," + j +")'/> </td>"
+
+                strHTML += '</tr>'
+            }
+
+            strHTML += '</table>'
+
+            document.getElementById('frmGrid').innerHTML = strHTML;
+        }
+
+        function vClickSquare(iRow, iCol)
+        {
+            var strSquareID = "Square" + iRow + "," + iCol;
+
+            document.getElementById(strSquareID).src = "Images/BlueSquare.png";
+        }
+    </script>
+</head>
+<body onload="vInit()">
+    <form id="frmGrid">
+
+
+
+    </form>
+</body>
+</html>

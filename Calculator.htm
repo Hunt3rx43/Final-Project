@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Calculator </title>
+    <script type="text/javascript" src="Calculator.js">
+        
+        
+    </script>
+</head>
+<body>
+    <form id="frmCalc">
+        <table style="margin-left:auto; margin-right:auto; background-color:crimson">
+            <tr>
+                <td colspan="4" style="text-align:center; font-size:xx-large"> Calculator </td>
+            </tr>
+            <tr>
+                <td colspan="4"> <input type="text" id="txtInput" size="26" readonly="readonly" style="text-align:right" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btn7" value="7" onclick="vNumber('7')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btn8" value="8" onclick="vNumber('8')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btn9" value="9" onclick="vNumber('9')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnQuo" value="/" onclick="vOp('/')" style="width:.5in; background-color:gainsboro" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btn4" value="4" onclick="vNumber('4')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btn5" value="5" onclick="vNumber('5')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btn6" value="6" onclick="vNumber('6')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnPro" value="x" onclick="vOp('x')" style="width:.5in; background-color:gainsboro" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btn1" value="1" onclick="vNumber('1')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btn2" value="2" onclick="vNumber('2')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btn3" value="3" onclick="vNumber('3')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnDif" value="-" onclick="vOp('-')" style="width:.5in; background-color:gainsboro" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btn0" value="0" onclick="vNumber('0')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnDec" value="." onclick="vNumber('.')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnNeg" value="(-)" onclick="vNumber('-')" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnSum" value="+" onclick="vOp('+')" style="width:.5in; background-color:gainsboro" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btnC" value="C" onclick="vClear()" style="width:.5in; background-color:gainsboro" /> </td>
+                <td> <input type="button" id="btnCE" value="CE" onclick="vClearE()" style="width:.5in; background-color:gainsboro" /> </td>
+                <td colspan="2"> <input type="button" id="btnEnt" value="Enter" onclick="vEnter()" style="width:1.122in; background-color:gainsboro" /> </td>
+            </tr>
+            <tr>
+                <td colspan="4"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="4"> <textarea id="taOut" cols="28" rows="10" readonly="readonly"></textarea> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

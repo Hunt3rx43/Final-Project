@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Arrays </title>
+    <script type="text/javascript" src="Arrays.js">
+        
+    </script>
+</head>
+<body style="background-color:crimson">
+    <form id="frmArrays">
+        <table style="margin-left:auto; margin-right:auto; background-color:#14a0dc">
+            <tr>
+                <td colspan="3" style="text-align:center; font-size:xx-large"> Arrays </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Please enter a number: </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtNum1" /> </td>
+                <td> <input type="button" value="Enter" id="btnEnter" style="width:1in; background-color:#dc5014" onclick="vEnter()" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> How many numbers? </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtNum2" /> </td>
+                <td rowspan="2"> <input type="button" value="Ran-Num" id="btnCount2" style="width:1in; margin:auto; background-color:#dc5014" onclick="vRandom()" /> </td>
+            </tr>
+            <tr>
+                <td style="text-align:center"> Max Value? </td>
+                <td style="padding-left:.125in"> <input type="text" id="txtNum3" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td style="padding-left:.5in"> <input type="button" value="Clear" id="btnClear" style="width:1in; text-align:center; margin:auto; background-color:#dc5014" onclick="vClear()" /> </td>
+                <td>  </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="padding-left:.5in"> <input type="button" value="Maximum" id="btnMax" style="width:1in; background-color:#dc5014" onclick="document.getElementById('taOut').value += '\r The Max is ' + fMaxNum() + '.'" /> </td>
+                <td style="padding-left:.5in"> <input type="button" value="Minimum" id="btnMin" style="width:1in; background-color:#dc5014" onclick="document.getElementById('taOut').value += '\r The Min is ' + fMinNum() + '.'" /> </td>
+                <td> <input type="button" value="Sum" id="btnSum" style="width:1in; background-color:#dc5014" onclick="document.getElementById('taOut').value += '\r The Sum is ' + fSumNum() + '.'" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td style="padding-left:.5in"> <input type="button" value="Range" id="btnRange" style="width:1in; background-color:#dc5014" onclick="document.getElementById('taOut').value += '\r The Range is ' + fRange() + '.'" /> </td>
+                <td style="padding-left:.5in"> <input type="button" value="Mean" id="btnMean" style="width:1in; background-color:#dc5014" onclick="document.getElementById('taOut').value += '\r The Mean is ' + fMean() + '.'" /> </td>
+                <td> <input type="button" value="Stan-Dev" id="btnStand" style="width:1in; background-color:#dc5014" onclick="document.getElementById('taOut').value += '\r The Standard Deviation is ' + fStanDev() + '.'" /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td> <input type="text" id="txtNum4" style="width:.5in" /> <input type="button" value="Search" id="btnSearch" style="width:1in; background-color:#dc5014" onclick="vSearch() + '.'" /> </td>
+                <td>  </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td>  </td>
+                <td style="padding-left:.5in"> <input type="button" value="Large-Even" id="btnLEven" style="width:1in; background-color:#dc5014" onclick="vLEven()" /> </td>
+                <td>  </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <hr /> </td>
+            </tr>
+            <tr>
+                <td colspan="3"> <textarea id="taOut" rows="10" cols="75"> </textarea> </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

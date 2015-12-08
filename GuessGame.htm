@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Guessing Game </title>
+    <script type="text/javascript">
+        function vGuess()
+        {
+            var iNumber = Math.floor(Math.random() * 100) + 1;
+
+            var iGuess = prompt('Guess my number between 1 and 100', '')
+            document.write('Your guess is ' + iGuess + '. <br>')
+
+            while (iGuess != iNumber)
+            {
+                if (iGuess < iNumber)
+                {
+                    document.write('Guess a bigger number. <br>')
+                    iGuess = prompt('Guess a bigger number.', '')
+                }
+
+                if (iGuess > iNumber)
+                {
+                    document.write('Guess a smaller number. <br>')
+                    iGuess = prompt('Guess a smaller number.', '')
+                }
+
+                iGuess = prompt('Guess my number between 1 and 100', '')
+                document.write('Your guess is ' + iGuess + '. <br>')
+            }
+
+            document.write('Yay!, You got the right number Bruh!')
+        }
+    </script>
+</head>
+<body>
+    <p style="text-align:center; font-size:xx-large"> Guessing Game </p>
+    <script type="text/javascript">
+        vGuess();
+    </script>
+</body>
+</html>

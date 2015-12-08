@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Sum </title>
+    <script type="text/javascript">
+        function vSum()
+        {
+            document.getElementById('txtAns').value =
+                parseFloat(document.getElementById('txtNum1').value) + parseFloat(document.getElementById('txtNum2').value)
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmCalc">
+        <table>
+            <tr>
+                <td style="text-align:center"> Number 1 </td>
+                <td style="text-align:center"> Number 2 </td>
+            </tr>
+            <tr>
+                <td> <input type="text" id="txtNum1" size="10" /> </td>
+                <td> <input type="text" id="txtNum2" size="10" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btnSum" value="Sum" onclick="vSum()" /> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="text" id="txtAns" size="27" /> </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

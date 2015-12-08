@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Tic-Tac-Toe </title>
+    <script type="text/javascript">
+        var astrValue = [['b', 'b', 'b'], ['b', 'b', 'b'], ['b', 'b', 'b']]
+        var strTurn = 'x';
+        var bGameOver = false;
+
+        function vBuild()
+        {
+            var strHTML = '';
+            var i, j;
+
+            strHTML = "<table style='margin-left:auto; margin-right:auto'>"
+            strHTML += "<tr> <td colspan='3' style='text-align:center; font-size:xx-large'> Tic-Tac-Toe </td> </tr>"
+
+            for (i = 0; i < 3; i++)
+            {
+                strHTML += "<tr>"
+
+                for (j = 0; j < 3; j++)
+                    strHTML += "<td> <img src='Images/BlankSquare.png' id='spot" + i + "," + j + "' onclick='vClick(" + i + "," + j + ")' /> </td>"
+
+                strHTML += "</tr>"
+            }
+            strHTML += "<tr> <td colspan='3' style='text-align:center'> <input type='button' id='btnNewGame' value='New Game' onclick='vNewGame()'/> </td> </tr>"
+            strHTML += "<tr> <td colspan='3' style='text-align:center'> <textarea id='taOut' cols='30' rows='8'></textarea> </td> </tr> "
+
+            document.getElementById('frmTTT').innerHTML = strHTML;
+        }
+
+        function vClick(iRow, iCol)
+        {
+            var strID = 'spot' + iRow + ',' + iCol;
+            var iCount = 0;
+
+            if (!bGameOver)
+            {
+                if (astrValue[iRow][iCol] == 'b')
+                {
+                    if (strTurn == 'x')
+                    {
+                        document.getElementById(strID).src = "Images/XSquare.png";
+                        astrValue[iRow][iCol] = 'x';
+                        iCount++;
+                        strTurn = 'o';
+                        if (bCheckWin('x'))
+                        {
+                            document.getElementById('taOut').value = "X Wins!!!   Play Again?";
+                            bGameOver = true;
+                        }
+                    }
+                    else if (strTurn == 'o')
+                    {
+                        document.getElementById(strID).src = "Images/CircleSquare.png";
+                        astrValue[iRow][iCol] = 'o';
+                        strTurn = 'x';
+                        if (bCheckWin('o'))
+                        {
+                            document.getElementById('taOut').value = "O Wins!!!   Play Again?";
+                            bGameOver = true;
+                        }
+                    }
+                    if (!bGameOver && bCheckDraw())
+                    {
+                        document.getElementById('taOut').value = "This is a Cat game!!!   That means that no one wins!!!   Play Again?";
+                        bGameOver = true;
+                    }
+                }
+            }
+        }
+
+        function vNewGame()
+        {
+            var i, j, strID;
+            for (i = 0; i < 3; i++)
+                for (j = 0; j < 3; j++)
+                {
+                    astrValue[i][j] = 'b';
+                    strID = 'spot' + i + ',' + j;
+                    document.getElementById(strID).src = 'Images/BlankSquare.png';
+                }
+            document.getElementById('taOut').value = '';
+            bGameOver = false;
+        }
+
+        function bCheckWin(strPlayer)
+        {
+            var bWin = false;
+            var i;
+
+            for (i = 0; i < 3; i++)
+                if (astrValue[i][0] == strPlayer && astrValue[i][1] == strPlayer && astrValue[i][2] == strPlayer)
+                    bWin = true;
+            for (j = 0; j < 3; j++)
+                if (astrValue[0][j] == strPlayer && astrValue[1][j] == strPlayer && astrValue[2][j] == strPlayer)
+                    bWin = true;
+            if (astrValue[0][0] == strPlayer && astrValue[1][1] == strPlayer && astrValue[2][2] == strPlayer)
+                bWin = true;
+            if (astrValue[0][2] == strPlayer && astrValue[1][1] == strPlayer && astrValue[2][0] == strPlayer)
+                bWin = true;
+
+            return bWin;
+        }
+
+        function bCheckDraw(strPlayer)
+        {
+            var bDraw = false;
+            var iCount = 0;
+            var i, j;
+
+            for (i = 0; i < 3; i++)
+                for (j = 0; j < 3; j++)
+                    if (astrValue[i][j] != 'b')
+                        iCount++;
+
+            if (iCount == 9)
+                bDraw = true;
+
+            return bDraw;
+        }
+    </script>
+</head>
+<body onload="vBuild()">
+    <form id="frmTTT"></form>
+</body>
+</html>

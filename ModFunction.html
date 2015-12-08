@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Mod Function </title>
+    <script type="text/javascript">
+        function vConvert()
+        {
+            //put the value of the textbox in a varible
+            var iInput = document.getElementById('txtInput').value;
+
+            //create varible to store the message to put in the output textbox
+            var strOutput = '';
+
+            //make sure they typed in a number
+            if (isNaN(iInput))
+                strOutput = 'Please type in a number!!!';
+            else if (iInput < 0)
+                strOutput = 'Negative measurements are bad!'
+            else
+            {
+                iInput = parseInt(iInput);
+                var iYards, iInches, iFeet, iRemInches, iRemFeet, iYards;
+
+                iInches = iInput % 12;
+                iRemInches = iInput - iInches;
+                iRemFeet = iRemInches / 12;
+                iFeet = iRemFeet % 3;
+                iRemFeet = iRemFeet - iFeet;
+                iYards = iRemFeet / 3;
+
+                strOutput = strUnits(iYards, ' yard ', ' yards ');
+                strOutput += strUnits(iFeet, ' foot ', ' feet ');
+                strOutput += strUnits(iInches, ' inch ', ' inches ');
+
+                /*if (iYards != 0)
+                {
+                    if (iYards == 1)
+                        strOutput = iYards + ' yard ';
+                    else
+                        strOutput = iYards + ' yards ';
+                }
+
+                if (iFeet != 0)
+                {
+                    if (iFeet == 1)
+                        strOutput += iFeet + ' foot ';
+                    else
+                        strOutput += iFeet + ' feet ';
+                }
+
+                if (iInches != 0)
+                {
+                    if (iInches == 1)
+                        strOutput = strOutput + iInches + ' inch';
+                    else
+                        strOutput += iInches + ' inches';
+                }*/
+                //else if (iYards == 0)
+                    //strOutput = ''
+                //strOutput = iYard + ' yards ' + iFeet + ' Feet ' + iInches + ' inches';
+
+            }
+
+            //print message into textbox
+            document.getElementById('txtOutput').value = strOutput
+
+            function strUnits(iValue, strSing, strPlur)
+            {
+                var strReturn = '';
+                if (iValue != 0)
+                {
+                    if (iValue == 1)
+                        strReturn = iValue + strSing;
+                    else
+                        strReturn = iValue + strPlur;
+                }
+                return strReturn;
+            }
+           
+        }
+    </script>
+</head>
+<body style="text-align:center; background-color:gainsboro">
+
+    <form id="frmConv">
+        <h3> Simple Conversion Calcualtor </h3> <br />
+        Insert your measurement as inches below. <br /><br />
+        <input type="text" id="txtInput" size="15" /> <br /><br />
+        <input type="button" id="btnConv" value="Convert" onclick="vConvert()" /> <br /><br />
+        <input type="text" id="txtOutput" size="30" />
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Q3 </title>
+    <script type="text/javascript" src="Quiz3.js">
+        
+    </script>
+</head>
+<body>
+
+    <div style="border:5px solid blue; width: 2.9in">
+    <form id="frmQ3">
+        <table>
+            <tr>
+                <td colspan="2" style="text-align:center;font-size:x-large"> Pass/No Pass </td>
+            </tr>
+            <tr>
+                <td> Enter Score: </td>
+                <td> <input type="text" id="txtScore" /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"style="text-align:center"> <input type="button" id="btnPass" value="Check" onclick="vCheck(document.getElementById('txtScore').value)"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="text" id="txtOut" size="35"/></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+</body>
+</html>

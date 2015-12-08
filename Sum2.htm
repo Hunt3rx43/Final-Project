@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Sum </title>
+    <script type="text/javascript">
+        function vSum(fNum1, fNum2)
+        {
+            //first check if the numbers given are actually numbers
+            //if not print message
+            //if so do the calculation
+
+            //if fNum1 is not a number print a message
+            // || = or
+            if (isNaN(fNum1))
+                document.getElementById('txtAns').value = "Please type in a valid number.";
+            else if (isNaN(fNum2))
+                document.getElementById('txtAns').value = "Please type in a valid number.";
+                //if they are both valid do the calculation
+            else
+            {
+                fNum1 = parseFloat(fNum1);
+                fNum2 = parseFloat(fNum2);
+                document.getElementById('txtAns').value = fNum1 + fNum2;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmCalc">
+        <table>
+            <tr>
+                <td style="text-align:center"> Number 1 </td>
+                <td style="text-align:center"> Number 2 </td>
+            </tr>
+            <tr>
+                <td> <input type="text" id="txtNum1" size="10" /> </td>
+                <td> <input type="text" id="txtNum2" size="10" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="text" id="txtNum3" size="10" /> </td>
+                <td> <input type="text" id="txtNum4" size="10" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="btnSum1" value="SumTop" onclick="vSum(document.getElementById('txtNum1').value, document.getElementById('txtNum2').value)" /> </td>
+                <td> <input type="button" id="btnSum2" value="SumBottom" onclick="vSum(document.getElementById('txtNum3').value, document.getElementById('txtNum4').value)" /> </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="text" id="txtAns" size="27" /> </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

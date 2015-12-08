@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Homework 5 </title>
+</head>
+<body>
+    <div style="border:groove; background-color:blue; width:4in">
+        <form id="frmName2">
+            <table>
+                <tr>
+                    <td> First Name </td>
+                    <td> <input type="text" id="txtFname2" /> </td>
+                </tr>
+                <tr>
+                    <td> Last Name </td>
+                    <td> <input type="text" id="txtLname2" /> </td>
+                </tr>
+                <tr>
+                    <td> Sport of Choice </td>
+                    <td> <input type="text" id="txtSchoice" /> </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center" colspan="2"> <input type="button" id="Button1" value="Click for Message" onclick="document.getElementById('txtMessage').value = document.getElementById('txtFname2').value +' '+ document.getElementById('txtLname2').value + ' has chosen ' + document.getElementById('txtSchoice').value + '.'" /> </td>
+                </tr>
+                <tr>
+                    <td> <input type="text" id="txtMessage" readonly="readonly"/> </td>
+                </tr>
+            </table>
+        </form>            
+    </div>
+</body>
+</html>

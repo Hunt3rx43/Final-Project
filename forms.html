@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title> Forms </title>
+</head>
+<body>
+
+    <!--a basic form with a text box and button-->
+    <form id="frmPractice">
+        <input type="text" id="txtTest" size="80"/> <br /><br />
+        <input type="button" id="btnClick" value="Click Me" /> <br /><br />
+        <textarea id="taOutput" rows="20" cols="20"></textarea>
+    </form>
+
+    <br /><br />
+    <br /><br />
+
+    <!--form without a table-->
+    <form id="frmName">
+        First Name <input type="text" id="txtFname" /><br /><br />
+        Last Name <input type="text" id="txtLname" /><br /><br />
+        <input type="button" id="btnClick2" value="Click Here" /><br /><br />
+        Message <textarea id="taMessage" cols="15" rows="5"></textarea>
+    </form>
+    
+    <br /><br />
+    <br /><br />
+
+    <!--form with a table-->
+
+    <div style="border:groove; border-color:blue; background-color:lavender; width:2.8in"
+    <form id="frmName2">
+        <table>
+            <tr>
+                <td> First Name </td>
+                <td> <input type="text" id="txtFname2" /> </td>
+            </tr>
+            <tr>
+                <td> Last Name </td>
+                <td> <input type="text" id="txtLname2" /> </td>
+            </tr>
+            <tr>
+                <td> <input type="button" id="Button1" value="Click Here" onclick="document.getElementById('taMessage1').value = 'Welcome to CSC210' +' '+ document.getElementById('txtFname2').value +' '+ document.getElementById('txtLname2').value +'.' "/> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td style="vertical-align:top"> Message </td>
+                <td> <textarea id="taMessage1" cols="15" rows="5"></textarea> </td>
+            </tr>
+        </table>
+        <form id="frmAge">
+            Age:<input type="text" id="txtAge" /><br />
+            <input type="button" id="btnClickAge" value="Message" onclick="document.getElementById('taMessage2').value = 'Wow, you\'re' +' '+document.getElementById('txtAge').value +' years old!'" />
+            <textarea id="taMessage2" readonly="readonly"></textarea>
+        </form>
+    </form>
+</body>
+</html>
