@@ -7,7 +7,7 @@
                          ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e'],
                          ['e', 'e', 'e', 'e', 'e', 'e', 'e', 'e']];
 
-        var strTurn = 'b';
+        var strTurn = '';
         var bNewGame = false;
         var bDown = false;
         var bUp = false;
@@ -18,7 +18,8 @@
         var iCount = 0;
         var strColor;
         var strOppColor;
-        if (strTurn == 'b')
+
+        if (strTurn == 'b' )
         {
             strColor = 'b';
             strOppColor = 'w';
@@ -27,6 +28,11 @@
         {
             strColor = 'w';
             strOppColor = 'b';
+        }
+        else {
+            strTurn = 'b'
+            strColor = 'b';
+            strOppColor = 'w';
         }
 
         function vBuild()
@@ -367,17 +373,28 @@
             var iMaxTurned = 0;
             var iMax = 0;
             var jMax = 0;
-
+                
             for (i = 0; i <= 7; i++)
                 for (j = 0; j <= 7; j++)
                 {
-                    iNumReverse(iMax, jMax, strColor, strOppColor);
-                    iTurned = iCount;
-                    if (iTurned > iMaxTurned)
+                    iNumReverse(i,j,strColor,strOppColor);
+                    iTurned = document.getElementById('taOut').value;
+                    if (astrColor[i][j] == 'e')
                     {
-                        iMax = i;
-                        jMax = j;
+                            if (iTurned > iMaxTurned)
+                            {
+                                iMaxTurned = iTurned;
+                                iMax = i;
+                                jMax = j;
+                            }
                     }
                 }
+            if (strColor == 'b') {
+                strColor = 'w';
+                strOppColor = 'b';
+            } else {
+                strColor = 'b';
+                strOppColor = 'w';
+            }
             vClick(iMax, jMax)
         }
